@@ -1,0 +1,19 @@
+# PhotoGallery
+
+## Description:
+PhotoGallery is a client for the photo-sharing site Flickr. It will fetch and display the most interesting public photos of the day according to Flickr.
+
+The application is built by following chapters of [Android Programming: The Big Nerd Ranch Guide](https://learning.oreilly.com/library/view/android-programming-the/9780135257555/).
+
+## Task:
+- [ ] Chapter 24: HTTP and Background Tasks
+- [ ] Chapter 25: Loopers, Handlers, and HandlerThread
+- [ ] Chapter 26: SearchView and SharedPreferences
+- [ ] Chapter 27: WorkManager
+- [ ] Chapter 28: Broadcast Intents
+- [ ] Chapter 29: Browsing the Web and WebView
+
+## Challenges:
+- [ ] Paging (page 503)
+- [ ] Preloading and caching (537)
+- [ ] Back button (page 610)

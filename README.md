@@ -9,7 +9,7 @@ The application is built by following chapters of [Android Programming: The Big 
 - [x] Chapter 24: HTTP and Background Tasks
 - [x] Chapter 25: Loopers, Handlers, and HandlerThread
 - [x] Chapter 26: SearchView and SharedPreferences
-- [ ] Chapter 27: WorkManager
+- [x] Chapter 27: WorkManager
 - [ ] Chapter 28: Broadcast Intents
 - [ ] Chapter 29: Browsing the Web and WebView
 

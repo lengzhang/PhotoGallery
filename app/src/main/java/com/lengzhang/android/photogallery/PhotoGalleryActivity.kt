@@ -1,7 +1,9 @@
 package com.lengzhang.android.photogallery
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
 class PhotoGalleryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,9 +13,15 @@ class PhotoGalleryActivity : AppCompatActivity() {
         val isFragmentContainerEmpty = savedInstanceState == null
         if (isFragmentContainerEmpty) {
             supportFragmentManager
-                    .beginTransaction()
-                    .add(R.id.fragmentContainer, PhotoGalleryFragment.newInstance())
-                    .commit()
+                .beginTransaction()
+                .add(R.id.fragmentContainer, PhotoGalleryFragment.newInstance())
+                .commit()
+        }
+    }
+
+    companion object {
+        fun newIntent(context: Context): Intent {
+            return Intent(context, PhotoGalleryActivity::class.java)
         }
     }
 }

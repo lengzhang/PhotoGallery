@@ -59,6 +59,8 @@ class PhotoPageFragment : VisibleFragment() {
         return view
     }
 
+    fun getWebView() = webView
+
     companion object {
         fun newInstance(uri: Uri): PhotoPageFragment {
             return PhotoPageFragment().apply {

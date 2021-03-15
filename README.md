@@ -16,4 +16,4 @@ The application is built by following chapters of [Android Programming: The Big 
 ## Challenges:
 - [ ] Paging (page 503)
 - [ ] Preloading and caching (537)
-- [ ] Back button (page 610)
+- [x] Back button (page 610)

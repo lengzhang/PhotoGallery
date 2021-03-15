@@ -8,18 +8,31 @@ import androidx.appcompat.app.AppCompatActivity
 
 class PhotoPageActivity : AppCompatActivity() {
 
+    private var currentFragment: PhotoPageFragment? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_photo_page)
 
         val fm = supportFragmentManager
-        val currentFragment = fm.findFragmentById(R.id.fragment_container)
+        currentFragment = fm.findFragmentById(R.id.fragment_container) as PhotoPageFragment?
 
         if (currentFragment == null) {
             val fragment = PhotoPageFragment.newInstance(intent.data as Uri)
             fm.beginTransaction()
                 .add(R.id.fragment_container, fragment)
                 .commit()
+            currentFragment = fragment
+        }
+    }
+
+    override fun onBackPressed() {
+        val webView = currentFragment?.getWebView()
+
+        if (webView?.canGoBack() == true) {
+            webView.goBack()
+        } else {
+            super.onBackPressed()
         }
     }
 

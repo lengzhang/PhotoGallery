@@ -11,7 +11,7 @@ The application is built by following chapters of [Android Programming: The Big 
 - [x] Chapter 26: SearchView and SharedPreferences
 - [x] Chapter 27: WorkManager
 - [x] Chapter 28: Broadcast Intents
-- [ ] Chapter 29: Browsing the Web and WebView
+- [x] Chapter 29: Browsing the Web and WebView
 
 ## Challenges:
 - [ ] Paging (page 503)

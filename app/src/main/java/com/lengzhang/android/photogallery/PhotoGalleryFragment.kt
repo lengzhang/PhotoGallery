@@ -1,6 +1,5 @@
 package com.lengzhang.android.photogallery
 
-import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
@@ -169,7 +168,8 @@ class PhotoGalleryFragment : VisibleFragment() {
         }
 
         override fun onClick(view: View) {
-            val intent = Intent(Intent.ACTION_VIEW, galleryItem.photoPageUri)
+            val intent = PhotoPageActivity
+                .newIntent(requireContext(), galleryItem.photoPageUri)
             startActivity(intent)
         }
     }

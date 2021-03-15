@@ -19,6 +19,8 @@ class ThumbnailDownloader<in T>(
     private val onThumbnailDownloaded: (T, Bitmap) -> Unit
 ) : HandlerThread(TAG) {
 
+    private val lruCacheStorage = ThumbnailLRUCache()
+
     val fragmentLifecycleObserver: LifecycleObserver =
         object : LifecycleObserver {
 
@@ -80,7 +82,11 @@ class ThumbnailDownloader<in T>(
 
     private fun handleRequest(target: T) {
         val url = requestMap[target] ?: return
-        val bitmap = flickrFetchr.fetchPhoto(url) ?: return
+
+        val bitmap = lruCacheStorage.getBitmap(url) ?: flickrFetchr.fetchPhoto(url).let {
+            if (it != null) lruCacheStorage.putBitmap(url, it)
+            it
+        } ?: return
 
         responseHandler.post(Runnable {
             if (requestMap[target] != url || hasQuit) {
